@@ -76,14 +76,5 @@ variable "package_buildspec" {
 
 variable "codebuild_environment_variables" {
   description = "Array of codebuild environment variables"
-  default     = [
-    {
-      name   = "name1"
-      value = "value1"
-    },
-    {
-      name   = "name2"
-      value = "value2"
-    }
-  ]
+  default     = []
 }
