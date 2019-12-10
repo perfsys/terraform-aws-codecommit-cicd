@@ -22,9 +22,23 @@ module "codecommit-cicd" {
     test_buildspec            = "buildspec_test.yml"         # Default value
     package_buildspec         = "buildspec.yml"              # Default value
     force_artifact_destroy    = "false"                      # Default value
+    codebuild_environment_variables = []                     # Default value
 }
 ```
 
+## Codebuild environment variables example
+```$xslt
+codebuild_environment_variables = [
+    {
+      name   = "name1"
+      value = "value1"
+    },
+    {
+      name   = "name2"
+      value = "value2"
+    }
+  ]
+```
 ### CodeCommit Note
 New repositories are **not** created with their default branch. Therefore, once the module has ran you must clone the repository, add a file, and then push to `origin/<repo_default_branch>` to initialize the repository.
 
